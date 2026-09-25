@@ -1,0 +1,12 @@
+services:
+  pyyt:
+    build: .
+    image: pyyt-download
+    # files in ./downloads are owned by your user, not root
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - ./downloads:/downloads
+    ports:
+      # only reachable from this computer; use "8080:8080" to open it to the network
+      - "127.0.0.1:8080:8080"
+    restart: unless-stopped

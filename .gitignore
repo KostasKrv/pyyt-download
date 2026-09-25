@@ -1,0 +1,13 @@
+# created by setup.sh
+.venv/
+bin/
+
+# downloaded videos
+downloads/
+*.part
+*.ytdl
+
+# never commit browser cookies
+cookies.txt
+
+__pycache__/
